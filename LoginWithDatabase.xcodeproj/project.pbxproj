@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		865DC3B11A3E11F200EFBDB3 /* SelectedConverstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865DC3B01A3E11F200EFBDB3 /* SelectedConverstion.swift */; };
 		86698BB21A2FA37F00BB7053 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86698BB11A2FA37F00BB7053 /* AppDelegate.swift */; };
 		86698BB41A2FA37F00BB7053 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86698BB31A2FA37F00BB7053 /* ViewController.swift */; };
 		86698BB71A2FA37F00BB7053 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86698BB51A2FA37F00BB7053 /* Main.storyboard */; };
 		86698BB91A2FA37F00BB7053 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86698BB81A2FA37F00BB7053 /* Images.xcassets */; };
 		86698BBC1A2FA37F00BB7053 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86698BBA1A2FA37F00BB7053 /* LaunchScreen.xib */; };
 		86698BC81A2FA37F00BB7053 /* LoginWithDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86698BC71A2FA37F00BB7053 /* LoginWithDatabaseTests.swift */; };
+		86ABD4F31A30CB9200A570D8 /* Conversations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ABD4F21A30CB9200A570D8 /* Conversations.swift */; };
+		86F885951A446120005B4AB0 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F885941A446120005B4AB0 /* Register.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		865DC3B01A3E11F200EFBDB3 /* SelectedConverstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedConverstion.swift; sourceTree = "<group>"; };
 		86698BAC1A2FA37F00BB7053 /* LoginWithDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginWithDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86698BB01A2FA37F00BB7053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86698BB11A2FA37F00BB7053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +40,8 @@
 		86698BC11A2FA37F00BB7053 /* LoginWithDatabaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginWithDatabaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86698BC61A2FA37F00BB7053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86698BC71A2FA37F00BB7053 /* LoginWithDatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithDatabaseTests.swift; sourceTree = "<group>"; };
+		86ABD4F21A30CB9200A570D8 /* Conversations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversations.swift; sourceTree = "<group>"; };
+		86F885941A446120005B4AB0 /* Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Register.swift; path = ../Register.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,9 @@
 			children = (
 				86698BB11A2FA37F00BB7053 /* AppDelegate.swift */,
 				86698BB31A2FA37F00BB7053 /* ViewController.swift */,
+				86F885941A446120005B4AB0 /* Register.swift */,
+				86ABD4F21A30CB9200A570D8 /* Conversations.swift */,
+				865DC3B01A3E11F200EFBDB3 /* SelectedConverstion.swift */,
 				86698BB51A2FA37F00BB7053 /* Main.storyboard */,
 				86698BB81A2FA37F00BB7053 /* Images.xcassets */,
 				86698BBA1A2FA37F00BB7053 /* LaunchScreen.xib */,
@@ -212,8 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86ABD4F31A30CB9200A570D8 /* Conversations.swift in Sources */,
 				86698BB41A2FA37F00BB7053 /* ViewController.swift in Sources */,
 				86698BB21A2FA37F00BB7053 /* AppDelegate.swift in Sources */,
+				865DC3B11A3E11F200EFBDB3 /* SelectedConverstion.swift in Sources */,
+				86F885951A446120005B4AB0 /* Register.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +284,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -315,7 +328,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -338,9 +352,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LoginWithDatabase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -348,9 +365,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LoginWithDatabase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -407,6 +426,7 @@
 				86698BCD1A2FA37F00BB7053 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86698BCE1A2FA37F00BB7053 /* Build configuration list for PBXNativeTarget "LoginWithDatabaseTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +435,7 @@
 				86698BD01A2FA37F00BB7053 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
