@@ -23,7 +23,6 @@ class Conversations: UITableViewController {
         super.viewDidLoad()
         self.loadDesign()
         self.getData()
-        
     }
     func loadDesign(){
         self.tableView.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
