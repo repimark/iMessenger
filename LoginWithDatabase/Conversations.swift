@@ -14,6 +14,7 @@ class Conversations: UITableViewController {
     var convs:NSArray!
     var succes:NSMutableArray!
     var userName:String!
+    var newConvView:UIView!
     
     @IBAction func logOut(){
         var main:ViewController = storyboard?.instantiateViewControllerWithIdentifier("loginView") as ViewController!
@@ -28,7 +29,13 @@ class Conversations: UITableViewController {
         self.tableView.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "back")!)
         self.tableView.rowHeight = 50
-        self.navigationController?.navigationController?.navigationBar.backgroundColor = UIColor.clearColor()
+        self.navigationController!.navigationBar.barTintColor = UIColor(red: 38.0/255.0, green: 166.0/255.0, blue: 91.0/255.0, alpha: 1.0)
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.Default
+        self.navigationItem.title = "iMessenger"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.tableView.rowHeight = 70
+        //self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Helvetica-Light", size: 20)]
+        //self.navigationController?.navigationBar.titleTextAttributes = [UIFont.self: UIFont(name: "Helverica, Light", size: 20)]
         
     }
     override func didReceiveMemoryWarning() {
@@ -50,14 +57,14 @@ class Conversations: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as Cell
         var item:NSDictionary = succes[indexPath.row] as NSDictionary
-        cell.textLabel?.text = ((getuser_id((item.valueForKey("user_one_id") as? String)!))+" -> "+(getuser_id((item.valueForKey("user_two_id") as? String)!))) as String
-        
+        cell.userLabel.text = ((getuser_id((item.valueForKey("user_one_id") as? String)!))+" -> "+(getuser_id((item.valueForKey("user_two_id") as? String)!))) as String
+        //cell.label.text = "\(indexPath.row)"
         
         //design
         cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.3)
-        cell.textLabel?.backgroundColor = UIColor.clearColor()
+        cell.userLabel.backgroundColor = UIColor.clearColor()
         
         return cell
     }
@@ -84,6 +91,57 @@ class Conversations: UITableViewController {
         
     }
     
+    @IBAction func newConvButton(){
+        let navbarHeight = self.navigationController?.navigationBar.bounds.height
+        newConvView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, 800))
+        let friend = UILabel(frame: CGRectMake(0, 10, self.view.bounds.width, 100))
+        let Picker = UIPickerView(frame: CGRectMake(0, 100, self.view.bounds.width, 300))
+        let newButton = UIButton(frame: CGRectMake(0, self.view.bounds.height - CGFloat(navbarHeight!) - 100, self.view.bounds.width / 2, 80))
+        let cancelButton = UIButton(frame: CGRectMake(self.view.bounds.width / 2, self.view.bounds.height - CGFloat(navbarHeight!) - 100  , self.view.bounds.width / 2 , 80))
+        newButton.addTarget(self, action: Selector("newConversation"), forControlEvents: UIControlEvents.TouchUpInside)
+        friend.text = "Ismerős Kiválasztása"
+        friend.tintColor = UIColor.whiteColor()
+        newButton.setTitle("Kiválaszt", forState: .Normal)
+        cancelButton.addTarget(self, action: Selector("dismissView"), forControlEvents: .TouchUpInside)
+        cancelButton.setTitle("Mégsem", forState: .Normal)
+        // 192, 57, 43 red colors
+        // green colors 38, 166, 9
+        cancelButton.backgroundColor = UIColor(red: 192.0/255.0, green: 57.0/255.0, blue: 43.0/255.0, alpha: 1.0)
+        newButton.backgroundColor = UIColor(red: 38.0/255.0, green: 166.0/255.0, blue: 91.0/255.0, alpha: 1.0)
+        newConvView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(1.0)
+        self.newConvView.addSubview(friend)
+        self.newConvView.addSubview(Picker)
+        self.newConvView.addSubview(newButton)
+        self.newConvView.addSubview(cancelButton)
+        
+        self.view.addSubview(newConvView)
+    }
+    func dismissView(){
+        self.newConvView.removeFromSuperview()
+    }
+    
+    func newConversation(){
+        let urlStr = "http://users.ininet.hu/repimark/Messenger/newConversation.php"
+        let request = NSMutableURLRequest(URL: NSURL(string: urlStr)!)
+        request.HTTPMethod = "POST"
+        let postString: String!//= "user_one_id="+user_one+"&user_two_id="+user_2;
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+            if error != nil
+            {
+                println("A hiba : \(error)")
+                return
+            }
+            //if HTTPResponse.statusCode == 200
+            
+            //let jsonError:NSError?
+            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as NSMutableArray!
+            
+            //self.succes = jsonResult.count
+            //println("\(self.succes)")
+        })
+        task.resume()
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         

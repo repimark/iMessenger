@@ -14,7 +14,13 @@
 		86698BB91A2FA37F00BB7053 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86698BB81A2FA37F00BB7053 /* Images.xcassets */; };
 		86698BBC1A2FA37F00BB7053 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86698BBA1A2FA37F00BB7053 /* LaunchScreen.xib */; };
 		86698BC81A2FA37F00BB7053 /* LoginWithDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86698BC71A2FA37F00BB7053 /* LoginWithDatabaseTests.swift */; };
+		8692E0921A8232F400F00588 /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 8692E0911A8232F400F00588 /* mail.png */; };
 		86ABD4F31A30CB9200A570D8 /* Conversations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ABD4F21A30CB9200A570D8 /* Conversations.swift */; };
+		86C6A6C51A4F76910014EA7A /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86C6A6C41A4F76910014EA7A /* Entitlements.plist */; };
+		86D54B061A6C2B230083631F /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 86D54B041A6C2B230083631F /* lock.png */; };
+		86D54B071A6C2B230083631F /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 86D54B051A6C2B230083631F /* user.png */; };
+		86D54B091A6C345E0083631F /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 86D54B081A6C345E0083631F /* background.jpg */; };
+		86EDDC401A816ACA00D23850 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EDDC3F1A816ACA00D23850 /* Cell.swift */; };
 		86F885951A446120005B4AB0 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F885941A446120005B4AB0 /* Register.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +46,13 @@
 		86698BC11A2FA37F00BB7053 /* LoginWithDatabaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginWithDatabaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86698BC61A2FA37F00BB7053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86698BC71A2FA37F00BB7053 /* LoginWithDatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithDatabaseTests.swift; sourceTree = "<group>"; };
+		8692E0911A8232F400F00588 /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
 		86ABD4F21A30CB9200A570D8 /* Conversations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversations.swift; sourceTree = "<group>"; };
+		86C6A6C41A4F76910014EA7A /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		86D54B041A6C2B230083631F /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
+		86D54B051A6C2B230083631F /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		86D54B081A6C345E0083631F /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		86EDDC3F1A816ACA00D23850 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		86F885941A446120005B4AB0 /* Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Register.swift; path = ../Register.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +77,7 @@
 		86698BA31A2FA37E00BB7053 = {
 			isa = PBXGroup;
 			children = (
+				86C6A6C41A4F76910014EA7A /* Entitlements.plist */,
 				86698BAE1A2FA37F00BB7053 /* LoginWithDatabase */,
 				86698BC41A2FA37F00BB7053 /* LoginWithDatabaseTests */,
 				86698BAD1A2FA37F00BB7053 /* Products */,
@@ -89,6 +102,7 @@
 				86ABD4F21A30CB9200A570D8 /* Conversations.swift */,
 				865DC3B01A3E11F200EFBDB3 /* SelectedConverstion.swift */,
 				86698BB51A2FA37F00BB7053 /* Main.storyboard */,
+				86EDDC3F1A816ACA00D23850 /* Cell.swift */,
 				86698BB81A2FA37F00BB7053 /* Images.xcassets */,
 				86698BBA1A2FA37F00BB7053 /* LaunchScreen.xib */,
 				86698BAF1A2FA37F00BB7053 /* Supporting Files */,
@@ -99,6 +113,10 @@
 		86698BAF1A2FA37F00BB7053 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				86D54B041A6C2B230083631F /* lock.png */,
+				8692E0911A8232F400F00588 /* mail.png */,
+				86D54B081A6C345E0083631F /* background.jpg */,
+				86D54B051A6C2B230083631F /* user.png */,
 				86698BB01A2FA37F00BB7053 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -201,9 +219,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86C6A6C51A4F76910014EA7A /* Entitlements.plist in Resources */,
 				86698BB71A2FA37F00BB7053 /* Main.storyboard in Resources */,
 				86698BBC1A2FA37F00BB7053 /* LaunchScreen.xib in Resources */,
+				86D54B061A6C2B230083631F /* lock.png in Resources */,
+				86D54B091A6C345E0083631F /* background.jpg in Resources */,
 				86698BB91A2FA37F00BB7053 /* Images.xcassets in Resources */,
+				8692E0921A8232F400F00588 /* mail.png in Resources */,
+				86D54B071A6C2B230083631F /* user.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +249,7 @@
 				86698BB21A2FA37F00BB7053 /* AppDelegate.swift in Sources */,
 				865DC3B11A3E11F200EFBDB3 /* SelectedConverstion.swift in Sources */,
 				86F885951A446120005B4AB0 /* Register.swift in Sources */,
+				86EDDC401A816ACA00D23850 /* Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +308,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				COPY_PHASE_STRIP = NO;
@@ -328,6 +353,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				COPY_PHASE_STRIP = YES;
